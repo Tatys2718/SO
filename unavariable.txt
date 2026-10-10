@@ -1,0 +1,4 @@
+int *flag;
+int shm_id = shmget(IPC_PRIVATE, sizeof(int), 0666 | IPC_CREAT);
+flag = (int*) shmat(shm_id, NULL, 0);
+*flag = 0;
